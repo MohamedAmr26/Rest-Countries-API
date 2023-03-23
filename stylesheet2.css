@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Variables */
+:root{
+    --VeryDarkBlue_LightModeText: hsl(200, 15%, 8%);
+    --DarkGray_LightModeInput: hsl(0, 0%, 52%);
+    --VeryLightGray_LightModeBackground: hsl(0, 0%, 98%);
+    --White_Light_Mode_Elements_and_Dark_Mode_Text: hsl(0, 0%, 100%);
+    --DarkBlue_DarkModeElements: hsl(209, 23%, 22%);
+    --VeryDarkBlue_DarkModeBackground: hsl(207, 26%, 17%);
+    --HomePageItems_FontSize: 14px;
+    --DetailPage_FontSize: 16px;
+}
+/*------------------*/
+
+/* Global Rules */
+.flex{display: flex;}
+.grid{display: grid;}
+.aboslute{position: absolute;}
+.relative{position: relative;}
+.UnSelectable{user-select: none;}
+.Capitalize{text-transform: capitalize;}
+.JustifyCenter{justify-content: center;}
+.JustifySpaceBetween{justify-content: space-between;}
+.JustifySpaceAround{justify-content: space-around;}
+.JustifySpaceEvenly{justify-content: space-evenly;}
+.Nunito_Sans_Weight_300{font-family: 'Nunito Sans', sans-serif; font-weight: 300;}
+.Nunito_Sans_Weight_600{font-family: 'Nunito Sans', sans-serif; font-weight: 600;}
+.Nunito_Sans_Weight_800{font-family: 'Nunito Sans', sans-serif; font-weight: 800;}
+.EffectAfter{position: relative; overflow: hidden;}
+.EffectAfter:hover::after{transform: translate(0, 0);}
+.EffectAfter:hover{cursor: pointer;}
+.EffectAfter::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-250px, 0px);
+    background-color: var(--DarkGray_LightModeInput);
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+    transition: transform .4s;
+}
+/*------------------*/
+
+body{background-color: var(--VeryLightGray_LightModeBackground);}
+
+header{
+    padding: 20px 0;
+    box-shadow: 0px -10px 15px 2px black;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+}
+header button, header i, header h1{
+    border: 0;
+    background-color: transparent;
+    color: var(--VeryDarkBlue_LightModeText);
+}
+
+header button:hover{
+    color: black;
+    cursor: pointer;
+}
+header button:hover .fa-moon{
+    color: black;
+}
+
+.ButtonHolder{
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.Country_Info{
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ButtonHolder button{
+    justify-self: flex-start;
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+    box-shadow: 0px 0px 5px 0px var(--DarkGray_LightModeInput);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 0;
+}
+
+.FlagImageHolder{
+    width: 600px;
+    height: fit-content;
+    overflow: hidden;
+    margin-right: 80px;
+}
+.FlagImage{
+    width: inherit;
+    margin: 0;
+}
+
+.Info{
+    width: fit-content;
+    text-align: left;
+}
+
+.CountryName{
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.MainInfo{
+    width: fit-content;
+    height: 200px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.MainInfo h2{
+    margin: 10px 30px 10px 0;
+    font-size: 1em;
+}
+.borderCountries h2{
+    font-size: 1em;
+}
+.borderCountries{align-self: flex-end;}
+.Label{
+    width: fit-content;
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+    box-shadow: 0px 0px 5px 0px var(--DarkGray_LightModeInput);
+    padding: 5px 10px; 
+    border-radius: 8px;
+    margin: -5px 0px 0px 10px;
+}
+
+@media screen and (min-width: 320px )and (max-width: 425px) { /*Mobiles*/
+    header{
+        font-size: .5em;
+    }
+    .MainInfo{
+        width: fit-content;
+        height: fit-content;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .borderCountries{flex-wrap: wrap;}
+    .borderCountries h2:nth-child(1){width: 100%; margin-bottom: 10px;}
+    .Label{margin: 0 2px;}
+    .FlagImageHolder{
+        width: 90vw;
+        margin-right: 0px;
+    }
+    .CountryName{
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+    .MainInfo h2:nth-child(5), .MainInfo h2:last-child{
+        margin-bottom: 40px;
+    }
+    .ButtonHolder{
+        width: 100%;
+        margin: 0 auto;
+        padding: 30px 20px 0px 20px;
+    }    
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) { /* Tablets */
+    header{
+        font-size: .75em;
+    }
+    .ButtonHolder{
+        width: 100%;
+        margin: 0 auto;
+        padding: 30px 20px 0px 20px;
+    }    
+    .FlagImageHolder{
+        width: 70vw;
+        margin-right: 0px;
+    }
+    .CountryName{
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+    .Info{
+        width: 70vw;
+    }
+}

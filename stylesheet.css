@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Variables */
+:root{
+    --VeryDarkBlue_LightModeText: hsl(200, 15%, 8%);
+    --DarkGray_LightModeInput: hsl(0, 0%, 52%);
+    --VeryLightGray_LightModeBackground: hsl(0, 0%, 98%);
+    --White_Light_Mode_Elements_and_Dark_Mode_Text: hsl(0, 0%, 100%);
+    --DarkBlue_DarkModeElements: hsl(209, 23%, 22%);
+    --VeryDarkBlue_DarkModeBackground: hsl(207, 26%, 17%);
+    --HomePageItems_FontSize: 14px;
+    --DetailPage_FontSize: 16px;
+}
+/*------------------*/
+
+/* Global Rules */
+.flex{display: flex;}
+.grid{display: grid;}
+.aboslute{position: absolute;}
+.relative{position: relative;}
+.UnSelectable{user-select: none;}
+.Capitalize{text-transform: capitalize;}
+.JustifyCenter{justify-content: center;}
+.JustifySpaceBetween{justify-content: space-between;}
+.JustifySpaceAround{justify-content: space-around;}
+.JustifySpaceEvenly{justify-content: space-evenly;}
+.Nunito_Sans_Weight_300{font-family: 'Nunito Sans', sans-serif; font-weight: 300;}
+.Nunito_Sans_Weight_600{font-family: 'Nunito Sans', sans-serif; font-weight: 600;}
+.Nunito_Sans_Weight_800{font-family: 'Nunito Sans', sans-serif; font-weight: 800;}
+/*------------------*/
+
+body{background-color: var(--VeryLightGray_LightModeBackground);}
+
+header{
+    padding: 20px 0;
+    box-shadow: 0px -10px 15px 2px black;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+}
+header button, header i, header h1{
+    border: 0;
+    background-color: transparent;
+    color: var(--VeryDarkBlue_LightModeText);
+}
+
+header button:hover{
+    color: black;
+    cursor: pointer;
+}
+header button:hover .fa-moon{
+    color: black;
+}
+
+.Bars{
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.Bars > div, .Bars > button{
+    margin: 30px 20px 10px 20px;
+}
+.Bars div input[type="search"]{
+    border: 0;
+    background-color: transparent;
+    width: 90%;
+}
+.Bars div input[type="search"]:focus{
+    outline: 0;
+}
+
+.Bars > div{
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+    padding: 10px;
+    width: 300px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 0px var(--DarkGray_LightModeInput);
+}
+.Bars > div > i{
+    margin-top: 5px;
+}
+
+.Bars button{
+    border-radius: 7px;
+    border: 0;
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+    padding: 15px;
+    box-shadow: 0px 0px 5px 0px var(--DarkGray_LightModeInput);
+    transition: all .2s;
+    position: relative;
+}
+
+.Menu{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+    box-shadow: 0px 0px 5px 0px var(--DarkGray_LightModeInput);
+    top: 48px;
+    width: 105%;
+    right: 50%;
+    transform: translateX(50%);
+    color: var(--VeryDarkBlue_LightModeText);
+    font-size: var(--DetailPage_FontSize);
+    border-radius: 8px;
+    z-index: 20;
+}
+.Menu a{
+    padding: 10px 0;
+    transition: all .2s;
+}
+.Menu a:not(:nth-child(1))::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    opacity: .2;
+    background-color: var(--VeryDarkBlue_LightModeText);
+    right: 50%;
+    transform: translate(50%, -600%);
+}
+.Menu a:hover{
+    background-color: var(--VeryLightGray_LightModeBackground);
+}
+.Bars button:hover{
+    cursor: pointer;
+    color: var(--DarkGray_LightModeInput);
+}
+
+.Bars button:hover .Menu{
+    display: flex;
+}
+
+.Labels{
+    width: 85%;
+    margin-top: 30px;
+    margin: 30px auto 0 auto;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: var(--White_Light_Mode_Elements_and_Dark_Mode_Text);
+    width: 250px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px 0px var(--DarkGray_LightModeInput);
+    margin: 30px;
+    overflow: hidden;
+    transition: all .2s;
+}
+.card figcaption{
+    margin: 20px;
+}
+
+.info h2{
+    margin: 5px 5px 5px 20px;
+    font-size: var(--DetailPage_FontSize);
+}
+.info h2:last-child{
+    margin: 5px 5px 30px 20px;
+    font-size: var(--DetailPage_FontSize);
+}
+
+.FlagImage{
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    box-shadow: 0px 2px 0px 0px var(--VeryLightGray_LightModeBackground);
+}
+
+.card:hover{
+    transform: scale(1.025);
+}
+
+.FlagImage:hover{cursor: pointer;}
+
+@media screen and (min-width: 320px )and (max-width: 425px) { /*Mobiles*/
+    header{
+        font-size: .5em;
+    }
+    .Bars{
+        justify-content: flex-start;
+    }
+    .Bars div{padding: 15px;}
+    .Bars div, .Bars{
+        width: 100%;
+    }
+    .Bars div input[type="search"]{
+        width: 90%;
+    }
+    .Bars > div > i{
+        margin-top: 0px;
+    }    
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) { /* Tablets */
+    header{
+        font-size: .75em;
+    }
+    .Labels{
+        margin-left: 10%;
+    }    
+}
